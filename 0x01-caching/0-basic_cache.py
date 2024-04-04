@@ -6,10 +6,6 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """Class doc"""
-    def __init__(self):
-        """Doc init methods"""
-        super().__init__()
-
     def put(self, key, item):
         """ Add an item in the cache
         """
