@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""Doc module"""
+BaseCaching = __import__('base_caching').BaseCaching
+
+
+class LIFOCache(BaseCaching):
+    def __init__(self):
+        """Doc init methods"""
+        super().__init__()
+
+    """Class doc"""
+    def put(self, key, item):
+        """ Add an item in the cache
+        """
+        length = len(self.cache_data)
+        lenitem = BaseCaching.MAX_ITEMS
+        if key is not None or item is not None:
+            if key not in self.cache_data.keys() and length >= lenitem:
+                last = self.cache_data.popitem()
+                print(f"DISCARD: {last[0]}")
+            self.cache_data[key] = item
+
+    def get(self, key):
+        """Get methods doc"""
+        if key is not None or key in self.cache_data.keys():
+            return self.cache_data.get(key)
+        else:
+            return None
