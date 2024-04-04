@@ -3,6 +3,7 @@
 from base_caching import BaseCaching
 """Import doc"""
 
+
 class BasicCache(BaseCaching):
     """Class doc"""
     def __init__(self):
