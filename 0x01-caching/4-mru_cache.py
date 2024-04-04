@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Doc module"""
 BaseCaching = __import__('base_caching').BaseCaching
+"""Import class doc"""
 
 
 class MRUCache(BaseCaching):
+    """Class doc"""
     def __init__(self):
         """Doc init methods"""
         super().__init__()
         self.keys = []
 
-    """Class doc"""
     def put(self, key, item):
         """ Add an item in the cache
         """

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Doc module"""
 BaseCaching = __import__('base_caching').BaseCaching
+"""Importing class doc"""
 
 
 class FIFOCache(BaseCaching):
+    """Class doc"""
     def __init__(self):
         """Doc init methods"""
         super().__init__()
 
-    """Class doc"""
     def put(self, key, item):
         """ Add an item in the cache
         """
