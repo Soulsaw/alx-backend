@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Doc module"""
-BaseCaching = __import__('base_caching').BaseCaching
+from base_caching import BaseCaching
 """Importing class doc"""
 
 
@@ -25,7 +25,4 @@ class FIFOCache(BaseCaching):
 
     def get(self, key):
         """Get methods doc"""
-        if key is not None or key in self.cache_data.keys():
-            return self.cache_data.get(key)
-        else:
-            return None
+        return self.cache_data.get(key, None)
