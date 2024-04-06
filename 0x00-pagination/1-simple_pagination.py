@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """Doc module"""
 import csv
-import math
 from typing import List
-import unittest
 
 
 def index_range(page, page_size):
@@ -13,7 +11,7 @@ def index_range(page, page_size):
     return (start_index, end_index)
 
 
-class Server(unittest.TestCase):
+class Server:
     """Server class to paginate a database of popular baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
@@ -42,6 +40,8 @@ class Server(unittest.TestCase):
         Returns:
         A lists of a != rows
         '''
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         self.dataset()
         pg, ps = index_range(page, page_size)
         try:
