@@ -32,7 +32,7 @@ class LRUCache(BaseCaching):
         '''
         length = len(self.cache_data)
         lenitem = BaseCaching.MAX_ITEMS
-        if key is not None or item is not None:
+        if key is not None and item is not None:
             if key not in self.cache_data.keys() and length >= lenitem:
                 pop = self.keys.pop(0)
                 self.cache_data.pop(pop)
