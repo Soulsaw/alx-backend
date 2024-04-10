@@ -23,7 +23,7 @@ app.config.from_object(Config)
 def home():
     """The root url for the home page"""
 
-    return render_template('3-index.html', title=gettext('home_title'),
+    return render_template('4-index.html', title=gettext('home_title'),
                            header=gettext('home_header'))
 
 
