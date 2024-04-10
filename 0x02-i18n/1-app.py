@@ -4,16 +4,16 @@ Doc for a basic flask app
 """
 from flask_babel import Babel
 from flask import Flask, render_template
-app = Flask(__name__)
 """Import module doc"""
+app = Flask(__name__)
 
 
 class Config:
+    """Doc of the config class"""
     LANGUES = ["en", "fr"]
 
 
 babel = Babel(app)
-
 app.config.from_object(Config)
 babel.default_locale = "en"
 babel.default_timezone = "UTC"
