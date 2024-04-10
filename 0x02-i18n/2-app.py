@@ -14,6 +14,7 @@ def get_locale():
     """Define the babel local time"""
     return request.accept_languages.best_match(["en", "fr"])
 
+
 @app.route("/", strict_slashes=False)
 def home():
     """The root url for the home page"""
