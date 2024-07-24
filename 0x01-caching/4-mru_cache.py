@@ -52,4 +52,9 @@ class MRUCache(BaseCaching):
         '''
         This method return a giving key item
         '''
-        return self.cache_data.get(key, None)
+        item = self.cache_data.get(key, None)
+        if item is not None:
+            idx = self.keys.index(key)
+            self.keys.pop(idx)
+            self.keys.append(key)
+        return item
