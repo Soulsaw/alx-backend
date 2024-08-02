@@ -1,7 +1,0 @@
-#: 3-app.py:29
-msgid "home_title"
-msgstr "Welcome to Holberton"
-
-#: 3-app.py:30
-msgid "home_header"
-msgstr "Hello world!"
