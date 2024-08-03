@@ -4,12 +4,13 @@ Doc for a basic flask app
 """
 from flask_babel import Babel
 from flask import Flask, render_template, request
+from typing import List
 """Import module doc"""
 app = Flask(__name__)
 LANGUAGES = ['en', 'fr']
 
 
-def get_locale():
+def get_locale() -> List:
     """Define the babel local time"""
     locale = request.args.get('locale')
     if locale in LANGUAGES:
