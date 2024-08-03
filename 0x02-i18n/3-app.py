@@ -2,7 +2,7 @@
 """
 Doc for a basic flask app
 """
-from flask_babel import Babel, _
+from flask_babel import Babel
 from flask import Flask, render_template, request
 """Import module doc"""
 app = Flask(__name__)
@@ -21,8 +21,7 @@ babel.init_app(app, locale_selector=get_locale)
 def home():
     """The root url for the home page"""
 
-    return render_template('3-index.html', title=_('home_title'),
-                           header=_('home_header'))
+    return render_template('3-index.html')
 
 
 if __name__ == "__main__":
