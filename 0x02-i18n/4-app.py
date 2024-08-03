@@ -3,20 +3,23 @@
 Doc for a basic flask app
 """
 from flask_babel import Babel, gettext
-from flask import Flask, render_template
+from flask import Flask, render_template, request, g
 """Import module doc"""
 app = Flask(__name__)
+LANGUAGES = ['en', 'fr']
 
 
-class Config:
-    """Doc of the config class"""
-    LANGUES = ["en", "fr"]
-    BABEL_DEFAULT_LOCALE = 'en'
-    BABEL_DEFAULT_TIMEZONE = 'UTC'
+def get_locale():
+    """Define the babel local time"""
+    locale = request.args.get('locale')
+    if locale in LANGUAGES:
+        return locale
+    else:
+        return request.accept_languages.best_match(["en", "fr"])
 
 
 babel = Babel(app)
-app.config.from_object(Config)
+babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route("/", strict_slashes=False)
