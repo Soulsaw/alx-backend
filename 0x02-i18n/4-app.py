@@ -28,8 +28,3 @@ def home():
     """The root url for the home page"""
 
     return render_template('4-index.html')
-
-
-if __name__ == "__main__":
-    """Definition of the main program"""
-    app.run()
