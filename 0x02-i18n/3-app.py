@@ -6,13 +6,15 @@ from flask_babel import Babel, _
 from flask import Flask, render_template, request
 """Import module doc"""
 app = Flask(__name__)
-babel = Babel(app)
 
 
-@babel.localeselector
 def get_locale():
     """Define the babel local time"""
     return request.accept_languages.best_match(["en", "fr"])
+
+
+babel = Babel(app)
+babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route("/", strict_slashes=False)
