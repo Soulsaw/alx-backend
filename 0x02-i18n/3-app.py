@@ -9,7 +9,7 @@ from typing import List
 app = Flask(__name__)
 
 
-def get_locale() -> List:
+def get_locale() -> str:
     """Define the babel local time"""
     return request.accept_languages.best_match(["en", "fr"])
 
@@ -23,3 +23,8 @@ def home():
     """The root url for the home page"""
 
     return render_template('3-index.html')
+
+
+if __name__ == "__main__":
+    """The main fun"""
+    app.run()
