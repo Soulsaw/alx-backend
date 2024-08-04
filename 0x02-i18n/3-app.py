@@ -4,7 +4,6 @@ Doc for a basic flask app
 """
 from flask_babel import Babel
 from flask import Flask, render_template, request
-from typing import List
 """Import module doc"""
 app = Flask(__name__)
 
@@ -19,7 +18,7 @@ babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route("/", strict_slashes=False)
-def home():
+def home() -> str:
     """The root url for the home page"""
 
     return render_template('3-index.html')
