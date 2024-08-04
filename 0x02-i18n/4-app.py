@@ -4,13 +4,12 @@ Doc for a basic flask app
 """
 from flask_babel import Babel
 from flask import Flask, render_template, request
-from typing import List
 """Import module doc"""
 app = Flask(__name__)
 LANGUAGES = ['en', 'fr']
 
 
-def get_locale() -> List:
+def get_locale() -> str:
     """Define the babel local time"""
     locale = request.args.get('locale')
     if locale in LANGUAGES:
@@ -24,7 +23,11 @@ babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route("/", strict_slashes=False)
-def home():
+def home() -> str:
     """The root url for the home page"""
-
     return render_template('4-index.html')
+
+
+if __name__ == "__main__":
+    """The main function"""
+    app.run()
