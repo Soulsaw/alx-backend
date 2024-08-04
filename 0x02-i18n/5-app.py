@@ -4,7 +4,6 @@ Doc for a basic flask app
 """
 from flask_babel import Babel
 from flask import Flask, render_template, request, g
-from typing import List, Dict
 """Import module doc"""
 app = Flask(__name__)
 LANGUAGES = ['en', 'fr']
@@ -16,7 +15,7 @@ users = {
 }
 
 
-def get_locale() -> List:
+def get_locale() -> str:
     """Define the babel local time"""
     user = getattr(g, 'user', None)
     if user is not None:
