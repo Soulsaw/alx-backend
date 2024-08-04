@@ -30,7 +30,7 @@ babel = Babel(app)
 babel.init_app(app, locale_selector=get_locale)
 
 
-def get_user(id) -> Dict:
+def get_user(id) -> dict:
     """This function return the given user dictionnary"""
     try:
         return users.get(int(id), None)
@@ -55,3 +55,8 @@ def before_request():
 def home():
     """The root url for the home page"""
     return render_template('5-index.html', user=g.user)
+
+
+if __name__ == "__main__":
+    """Starting flask app"""
+    app.run()
