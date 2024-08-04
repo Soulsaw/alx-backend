@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-03 09:12+0000\n"
+"POT-Creation-Date: 2024-08-04 23:29+0000\n"
 "PO-Revision-Date: 2024-08-03 00:33+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -35,3 +35,4 @@ msgstr "Vous êtes connecté en tant que %(username)s."
 #: templates/5-index.html:11 templates/6-index.html:11
 msgid "not_logged_in"
 msgstr "Vous n'êtes pas connecté."
+
