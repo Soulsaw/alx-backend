@@ -1,5 +1,5 @@
-import { createClient } from "redis";
-const redis = require('redis');
+import { createClient, print } from "redis";
+
 const redisClient = createClient();
 
 function createHset() {
@@ -13,7 +13,7 @@ function createHset() {
         "Paris": 2
     }
     for (const [field, value] of Object.entries(hvalues)) {
-        redisClient.hset(hkey, field, value, redis.print);
+        redisClient.hset(hkey, field, value, print);
     }
 }
 
