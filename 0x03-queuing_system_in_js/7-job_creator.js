@@ -52,14 +52,14 @@ jobs.map((elem) => {
     const job = queue.create('push_notification_code_2', elem);
     job.save(() => {
         console.log(`Notification job created: ${job.id}`);
-    });
-    job.on("complete", () => {
+    })
+    .on("complete", () => {
         console.log(`Notification job ${job.id} completed`);
-    });
-    job.on('error', (err) => {
+    })
+    .on('error', (err) => {
         console.log(`Notification job ${job.id} failed: ${err}`);
-    });
-    job.progress((cpt, tt) => {
-        console.log(`Notification job ${job.id} ${Math.round((cpt / tt) * 100)}% complete`);
+    })
+    .on('progress', (progress, _) => {
+        console.log(`Notification job ${job.id} ${progress}% complete`);
     });
 });
