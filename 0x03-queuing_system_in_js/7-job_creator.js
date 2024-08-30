@@ -50,16 +50,16 @@ const jobs = [
 
 jobs.map((elem) => {
     const job = queue.create('push_notification_code_2', elem);
-    job.save(() => {
-        console.log(`Notification job created: ${job.id}`);
+    job.save((err) => {
+        if (!err) console.log(`Notification job created: ${job.id}`);
     })
-    .on("complete", () => {
-        console.log(`Notification job ${job.id} completed`);
-    })
-    .on('error', (err) => {
-        console.log(`Notification job ${job.id} failed: ${err}`);
-    })
-    .on('progress', (progress, _) => {
-        console.log(`Notification job ${job.id} ${progress}% complete`);
-    });
+        .on("complete", () => {
+            console.log(`Notification job ${job.id} completed`);
+        })
+        .on('error', (err) => {
+            console.log(`Notification job ${job.id} failed: ${err.message}`);
+        })
+        .on('progress', (progress) => {
+            console.log(`Notification job ${job.id} ${progress}% complete`);
+        });
 });
