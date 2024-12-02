@@ -1,5 +1,5 @@
 import { createClient, print } from "redis";
-
+/* Getting a value in redis server asyncronously */
 const redisClient = createClient();
 
 redisClient.on('error', (err) => { console.log(`Redis client not connected to the server: ${err}`) });

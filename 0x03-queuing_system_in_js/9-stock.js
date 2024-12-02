@@ -5,7 +5,7 @@ const { promisify } = require('util');
 const app = express();
 app.use(express.json())
 const port = 1245;
-//Redis client handling
+//Redis client handling the redis server API
 const client = createClient();
 
 const listProducts = [

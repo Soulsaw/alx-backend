@@ -1,5 +1,5 @@
 import { createClient, print } from "redis";
-
+/* Advance operation in Redis */
 const redisClient = createClient();
 
 function createHset() {

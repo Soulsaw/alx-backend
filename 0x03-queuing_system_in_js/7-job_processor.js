@@ -1,5 +1,5 @@
 import { createQueue } from "kue";
-
+/* Job processor again */
 const queue = createQueue();
 
 const blackListPhoneNumbers = ['4153518780', '4153518781'];

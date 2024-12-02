@@ -1,4 +1,5 @@
 import { createQueue } from "kue";
+/* Job creator again */
 const queue = createQueue();
 
 const jobs = [

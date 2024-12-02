@@ -1,5 +1,5 @@
 import { createClient, print } from "redis";
-
+/* Set a value in the redis server */
 const redisClient = createClient();
 
 redisClient.on('error', (err) => { console.log(`Redis client not connected to the server: ${err}`) });

@@ -1,6 +1,7 @@
 import { expect } from "chai";
 import createPushNotificationsJobs from "./8-job";
 import { createQueue } from "kue";
+/* unittest on job que */
 const queue = createQueue();
 
 before(function (done) {

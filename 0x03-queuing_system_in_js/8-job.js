@@ -1,4 +1,4 @@
-function createPushNotificationsJobs(jobs, queue) {
+export default function createPushNotificationsJobs(jobs, queue) {
     if (!Array.isArray(jobs)) {
         throw new Error('Jobs is not an array');
     }
@@ -17,6 +17,4 @@ function createPushNotificationsJobs(jobs, queue) {
                 console.log(`Notification job ${job.id} ${progress}% complete`);
             });
     });
-
 }
-module.exports = createPushNotificationsJobs;

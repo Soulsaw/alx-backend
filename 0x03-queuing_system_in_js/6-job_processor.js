@@ -1,4 +1,5 @@
 import { createQueue } from "kue";
+/* Job processor with "kue" */
 const queue = createQueue();
 
 function sendNotification(phoneNumber, message){

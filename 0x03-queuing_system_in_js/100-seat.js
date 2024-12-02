@@ -2,7 +2,7 @@ import { createClient } from "redis";
 import { createQueue } from "kue";
 const express = require('express');
 const { promisify } = require('util');
-
+/* Managing the available seat in a meeting */
 const client = createClient();
 const key = 'available_seats';
 const get = promisify(client.get).bind(client);

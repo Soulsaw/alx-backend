@@ -1,5 +1,5 @@
 import { createQueue } from "kue";
-
+/* Job creator in redis server */
 const queue = createQueue();
 
 const jobData = {

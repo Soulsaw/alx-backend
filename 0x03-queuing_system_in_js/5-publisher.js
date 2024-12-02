@@ -1,5 +1,5 @@
 import { createClient } from "redis";
-
+/* Using the publisher featue in redis */
 const redisClient = createClient();
 
 redisClient.on('error', (err) => console.log(`Redis client not connected to the server: ${err}`));
